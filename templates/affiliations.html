@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Affiliations</h2>
+<p>
+    FamCan-India acknowledges the support and collaboration of the following institutions:
+</p>
+
+<div class="aff-grid">
+    <div class="aff-card">
+        <img src="{{ url_for('static', filename='images/nirma_logo.jpg') }}" alt="Nirma University Logo">
+        <h4>Nirma University</h4>
+    </div>
+
+    <div class="aff-card">
+        <img src="{{ url_for('static', filename='images/kpgu_logo.jpg') }}" alt="KPGU Logo">
+        <h4>Drs. Kiran & Pallavi Patel Global University (KPGU), Vadodara</h4>
+    </div>
+
+    <div class="aff-card">
+        <img src="{{ url_for('static', filename='images/hocvedanta_logo.jpg') }}" alt="HOC Vedanta Logo">
+        <h4>Hemato-Oncology Clinic (HOC Vedanta), Ahmedabad</h4>
+    </div>
+
+    <div class="aff-card">
+        <img src="{{ url_for('static', filename='images/kchrc_logo.jpg') }}" alt="Muni Seva Ashram Logo">
+        <h4>Kailash Cancer Hospital, Muni Seva Ashram, Goraj</h4>
+    </div>
+
+    <div class="aff-card">
+        <img src="{{ url_for('static', filename='images/iimindore_logo.jpg') }}" alt="IIM Indore Logo">
+        <h4>Indian Institute of Management (IIM) Indore</h4>
+    </div>
+</div>
+{% endblock %}
