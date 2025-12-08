@@ -5,44 +5,42 @@
     <meta charset="UTF-8">
     <title>FamCan-India</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PHRDBYVFN4');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PHRDBYVFN4');
+    </script>
 </head>
 <body>
     <!-- Header with logos + tagline -->
     <header>
-    <div class="logo-bar">
-        <!-- Left corner -->
-        <div class="logo-left">
-            <img src="{{ url_for('static', filename='images/nirma_logo.jpg') }}" alt="Nirma University Logo">
+        <div class="logo-bar">
+            <!-- Left corner -->
+            <div class="logo-left">
+                <img src="{{ url_for('static', filename='images/nirma_logo.jpg') }}" alt="Nirma University Logo">
+            </div>
+
+            <!-- Center (FamCan logo) -->
+            <div class="logo-center">
+                <img src="{{ url_for('static', filename='images/famcanindia_logo.jpg') }}" alt="FamCan-India Logo" class="famcan">
+            </div>
+
+            <!-- Right corner -->
+            <div class="logo-right">
+                <img src="{{ url_for('static', filename='images/kpgu_logo.jpg') }}" alt="KPGU Logo">
+            </div>
         </div>
-
-        <!-- Center (FamCan logo) -->
-        <div class="logo-center">
-            <img src="{{ url_for('static', filename='images/famcanindia_logo.jpg') }}" alt="FamCan-India Logo" class="famcan">
-        </div>
-
-        <!-- Right corner -->
-        <div class="logo-right">
-            <img src="{{ url_for('static', filename='images/kpgu_logo.jpg') }}" alt="KPGU Logo">
-        </div>
-    </div>
-</header>
-
-
+        <div class="tagline">Together we detect, together we protect</div>
+    </header>
 
     <!-- Navigation bar -->
     <nav>
         <a href="{{ url_for('homepage') }}">Home</a>
         <a href="{{ url_for('about') }}">About</a>
-        <a href="{{ url_for('affiliations') }}">Affiliations</a>
+        <a href="{{ url_for('affiliations') }}">Team Members</a>
         <a href="{{ url_for('data_overview') }}">Data Overview</a>
         <a href="{{ url_for('stats_overview') }}">Statistics Overview</a>
         <a href="{{ url_for('acknowledgements') }}">Acknowledgements</a>
@@ -50,7 +48,7 @@
         <a href="{{ url_for('contact') }}">Contact</a>
     </nav>
 
-   <!-- Page-specific content -->
+    <!-- Page-specific content -->
     <main>
         {% block content %}{% endblock %}
     </main>
@@ -61,4 +59,3 @@
     </footer>
 </body>
 </html>
-
