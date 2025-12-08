@@ -1,34 +1,61 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <title>FamCan-India</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PHRDBYVFN4');
+    </script>
+</head>
+<body>
+    <!-- Header with logos + tagline -->
+    <header>
+        <div class="logo-bar">
+            <!-- Left corner -->
+            <div class="logo-left">
+                <img src="{{ url_for('static', filename='images/nirma_logo.jpg') }}" alt="Nirma University Logo">
+            </div>
 
-{% block content %}
-<h2>Contact Us</h2>
-<p>
-    We welcome inquiries, collaborations, and feedback related to the FamCan-India registry. 
-    Please use the following channels to reach us:
-</p>
+            <!-- Center (FamCan logo) -->
+            <div class="logo-center">
+                <img src="{{ url_for('static', filename='images/famcanindia_logo.jpg') }}" alt="FamCan-India Logo" class="famcan">
+            </div>
 
-<section class="contact-section">
-    <h3>General Contact Information</h3>
-    <ul>
-        <li><strong>Email:</strong> famcanindia@gmail.com</li>
-        <li><strong>Institutional Address (Nirma University):</strong> Institute of Science, Nirma University, Ahmedabad, Gujarat, India</li>
-        <li><strong>Institutional Address (KPGU):</strong> Krishna School of Science, Drs. Kiran & Pallavi Patel Global University, Vadodara, Gujarat, India</li>
-    </ul>
-</section>
+            <!-- Right corner -->
+            <div class="logo-right">
+                <img src="{{ url_for('static', filename='images/kpgu_logo.jpg') }}" alt="KPGU Logo">
+            </div>
+        </div>
+        <div class="tagline">Together we detect, together we protect</div>
+    </header>
 
-<section class="contact-section">
-    <h3>Feedback Form</h3>
-    <p>
-        We value your input. Please share your suggestions, questions, or collaboration requests through our feedback form:
-    </p>
-    <p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScuy5kSq39_zwpFBWPCiZ-IY9rbyJvk4yk-TDafophamn0tLw/viewform?usp=header" target="_blank">
-            Submit Feedback Here
-        </a>
-    </p>
-    <p class="submission-note">
-        Submission Note: All feedback is reviewed by the FamCan-India coordination team. Responses will be provided within 5–7 working days. 
-        Sensitive queries related to patient data or registry access will be redirected to the appropriate institutional ethics committee.
-    </p>
-</section>
-{% endblock %}
+    <!-- Navigation bar -->
+    <nav>
+        <a href="{{ url_for('homepage') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('affiliations') }}">Team Members</a>
+        <a href="{{ url_for('data_overview') }}">Data Overview</a>
+        <a href="{{ url_for('stats_overview') }}">Statistics Overview</a>
+        <a href="{{ url_for('acknowledgements') }}">Acknowledgements</a>
+        <a href="{{ url_for('privacy') }}">Privacy & Ethics</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+
+    <!-- Page-specific content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 FamCan-India Registry</p>
+    </footer>
+</body>
+</html>
